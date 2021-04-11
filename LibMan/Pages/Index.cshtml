@@ -1,0 +1,43 @@
+﻿@page
+@model LibMan.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_LayoutLogin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <div class="row">
+        <div class="col-md-4" style="background-color:#ffe6b3; border: 3px outset #ffda8c;">
+            <h2>Login Page</h2>
+            <form method="post" asp-page="login">
+                @Model.Msg
+                <div class="form-group">
+                    Username&nbsp;<input type="text" name="username" />
+                </div>
+                <div class="form-group">
+                    Password &nbsp;<input type="password" name="password" />
+                </div>
+                &nbsp;
+                <div class="form-group">
+                    <input type="submit" value="Login" class="buttons" />
+                    <input type="submit" value="Cancel" class="cancelbtn" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@page
+@model LibMan.EditBookModel
+@{
+    ViewData["Title"] = "EditBook";
+    Layout = "~/Pages/Shared/_LayoutUser.cshtml";
+}
+
+<h1>EditBook</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblLibrary.BookId" />
+            <div class="form-group">
+                <label asp-for="TblLibrary.UserId" class="control-label"></label>
+                <select asp-for="TblLibrary.UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="TblLibrary.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Title" class="control-label"></label>
+                <input asp-for="TblLibrary.Title" class="form-control" />
+                <span asp-validation-for="TblLibrary.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Author" class="control-label"></label>
+                <input asp-for="TblLibrary.Author" class="form-control" />
+                <span asp-validation-for="TblLibrary.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Translator" class="control-label"></label>
+                <input asp-for="TblLibrary.Translator" class="form-control" />
+                <span asp-validation-for="TblLibrary.Translator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Publisher" class="control-label"></label>
+                <input asp-for="TblLibrary.Publisher" class="form-control" />
+                <span asp-validation-for="TblLibrary.Publisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Descripton" class="control-label"></label>
+                <input asp-for="TblLibrary.Descripton" class="form-control" />
+                <span asp-validation-for="TblLibrary.Descripton" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.BookCoverName" class="control-label"></label>
+                <input asp-for="TblLibrary.BookCoverName" class="form-control" />
+                <span asp-validation-for="TblLibrary.BookCoverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Catagories" class="control-label"></label>
+                <input asp-for="TblLibrary.Catagories" class="form-control" />
+                <span asp-validation-for="TblLibrary.Catagories" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Status" class="control-label"></label>
+                <input asp-for="TblLibrary.Status" class="form-control" />
+                <span asp-validation-for="TblLibrary.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Rate" class="control-label"></label>
+                <input asp-for="TblLibrary.Rate" class="form-control" />
+                <span asp-validation-for="TblLibrary.Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Library">Back to Library</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

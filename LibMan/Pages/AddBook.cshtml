@@ -1,0 +1,112 @@
+﻿@page
+@model LibMan.AddBookModel
+@{
+    ViewData["Title"] = "AddBook";
+    Layout = "~/Pages/Shared/_LayoutUser.cshtml";
+}
+
+<form id="frm1" method="post">
+    <div class="row">
+        <div class="column" style="background-color:#ffe6b3;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <h1>Add a Book @Model.Username!</h1>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.BookId" class="control-label">Enter the Number of Your Book in the Library:</label>
+                <input asp-for="TblLibrary.BookId" class="form-control" />
+                <span asp-validation-for="TblLibrary.BookId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Title" class="control-label">Enter Your Book's Title:</label>
+                <input asp-for="TblLibrary.Title" class="form-control" />
+                <span asp-validation-for="TblLibrary.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Author" class="control-label">Enter Your Book's Author:</label>
+                <input asp-for="TblLibrary.Author" class="form-control" />
+                <span asp-validation-for="TblLibrary.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Translator" class="control-label">Enter Your Book's Translator:</label>
+                <input asp-for="TblLibrary.Translator" class="form-control" />
+                <span asp-validation-for="TblLibrary.Translator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Publisher" class="control-label">Enter Your Book's Publisher:</label>
+                <input asp-for="TblLibrary.Publisher" class="form-control" />
+                <span asp-validation-for="TblLibrary.Publisher" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="column" style="background-color:#ffe6b3;">
+            <div class="form-group">
+                <label asp-for="TblLibrary.Descripton" class="control-label">Give a Description of Your Book:</label>
+                <input asp-for="TblLibrary.Descripton" class="form-control" />
+                <span asp-validation-for="TblLibrary.Descripton" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.BookCoverName" class="control-label">Enter Your Book's Cover Url:</label>
+                <input asp-for="TblLibrary.BookCoverName" class="form-control" />
+                <span asp-validation-for="TblLibrary.BookCoverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Catagories" class="control-label">Enter Your Book's Catagory:</label>
+                <input asp-for="TblLibrary.Catagories" class="form-control" />
+                <span asp-validation-for="TblLibrary.Catagories" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblLibrary.Status" class="control-label">What is Your Current Status:</label>
+                <select class="form-control" id="status" name="status">
+                    <option value="1">Completed</option>
+                    <option value="2">Reading</option>
+                    <option value="3">Not Started</option>
+                </select>
+                <input asp-for="TblLibrary.Status" class="form-control" placeholder="Please enter again to avoid complexity! "/>
+                <span asp-validation-for="TblLibrary.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <fieldset asp-for="TblLibrary.Rate" data-val="true" data-val-required="The Rate field is required." class="rating">
+                    <p>Please also rate your experience with the book:</p>
+                    <input type="radio" id="star5" name="Rating" value="5" />
+                    <label for="star5" title="Rocks!">5 stars</label>
+                    <input type="radio" id="star4" name="Rating" value="4" />
+                    <label for="star4" title="Pretty good">4 stars</label>
+                    <input type="radio" id="star3" name="Rating" value="3" />
+                    <label for="star3" title="Meh">3 stars</label>
+                    <input type="radio" id="star2" name="Rating" value="2" />
+                    <label for="star2" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star1" name="Rating" value="1" />
+                    <label for="star1" title="Sucks big time">1 star</label>
+                </fieldset>
+                <input asp-for="TblLibrary.Rate" class="form-control" placeholder="Please enter again to avoid complexity! " />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column2" style="background-color:#ffe6b3;">
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="  margin-bottom: 15px"> Remember me
+            </label>
+            <br>
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Add a Book" class="buttons" />
+                <input type="submit" value="Cancel" class="cancelbtn" />
+                <a asp-page="Library">Back to List</a>
+            </div>
+
+        </div>
+    </div>
+</form>
+<br></br>
+<script>
+    function show() {
+        alert("Your Book has been added!");
+    }
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

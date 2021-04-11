@@ -1,0 +1,305 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 35px; /* Vertically center the text there */
+}
+
+/*Div columns and rows*/
+.column {
+    float: left;
+    width: 49.3%;
+    padding: 10px;
+    height: 550px;
+    border: 3px outset #ffda8c;
+}
+.columnsign {
+    float: left;
+    width: 49.3%;
+    padding: 10px;
+    height: 400px;
+    border: 3px outset #ffda8c;
+}
+.column2 {
+    float: left;
+    width: 98.5%;
+    padding: 10px;
+    height: 100px;
+    border: 3px outset #ffda8c;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+.imagecolumn {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    height: 250px;
+    border: 3px outset #ffda8c;
+}
+.jsoncolumn {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    height: 350px;
+    border: 3px outset #ffda8c;
+    color: #FFFFFF;
+}
+
+.booksearch input[type=text] {
+    border: 3px solid #ffda8c;
+    width: 300px;
+}
+.booksearch input[type=submit] {
+    box-shadow: 0px 7px 14px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color: #79bde9;
+    border-radius: 11px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 9px 22px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+}
+
+.buttons {
+    box-shadow: 0px 7px 14px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color: #79bde9;
+    border-radius: 11px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 9px 22px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+}
+
+
+/*For Json*/
+.checked {
+    color: orange;
+}
+
+.fa-star {
+    cursor: pointer;
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+.card-columns .card:hover .card-img {
+    opacity: 1;
+    -webkit-transform-style: preserve-3d;
+}
+
+.card-columns .card-body {
+    height: 100px;
+    font-family: 'Nunito', sans-serif;
+    background: #fbfafd;
+}
+
+.card-columns .card-img {
+    height: 300px;
+    width:200px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    opacity: .8;
+}
+
+.modal .card-img {
+    height: 500px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.card-columns .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+}
+
+.card-footer {
+    background: #fbfafd;
+}
+
+/*RATE PART*/
+.rating {
+    float: left;
+}
+    /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+    follow these rules. Every browser that supports :checked also supports :not(), so
+    it doesn’t make the test unnecessarily selective */
+    .rating:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+        clip: rect(0,0,0,0);
+    }
+
+    .rating:not(:checked) > label {
+        float: right;
+        width: 1em;
+        padding: 0 .1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 200%;
+        line-height: 1.2;
+        color: #ddd;
+        text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+        .rating:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rating > input:checked ~ label {
+        color: #f70;
+        text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: gold;
+        text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+        color: #ea0;
+        text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+    .rating > label:active {
+        position: relative;
+        top: 2px;
+        left: 2px;
+    }
+
+.pb-cmnt-container {
+    font-family: Lato;
+    margin-top: 100px;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    width: 100%;
+    border: 1px solid #F2F2F2;
+}
+
+.sendButton {
+    background-color: #79bde9;
+    border-radius: 11px;
+    border: 3px solid #79bde9;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 76px;
+    text-decoration: none;
+    text-shadow: 0px -1px 50px #2f6627;
+}
+
+
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: right;
+}

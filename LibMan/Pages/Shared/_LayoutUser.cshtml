@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LibMan</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Styles", required: false)
+</head>
+<body style="        background-image: url(uploads/shelf3.jpg);
+        background-size: 93%;
+" >
+    <header style='background:#ffe6b3'>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-#ffe6b3 border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-family: Brush Script MT, Brush Script Std, cursive;"><h2 style="font-size: 40px">LibMan</h2></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/SignUp">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Library">Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/JsonData">Import/Export Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UserList">Online List</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="topright">
+                    <img src="avatar.png" srcset="@Url.Content("~/uploads/avatar.png")" alt="Avatar" width="96" height="96">
+                    <span class="username">Welcome Back!</span>
+                    
+                    <a class="button-logout" id="rcmbtn104" role="button" href="./?_task=logout" onclick="return rcmail.command('switch-task','logout',this,event)">Logout</a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style='background:#ffe6b3'>
+        <div class="container">
+            &copy; 2020 - LibMan - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

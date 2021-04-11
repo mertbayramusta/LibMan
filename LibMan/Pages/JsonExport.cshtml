@@ -1,0 +1,39 @@
+﻿@page
+@model LibMan.JsonExportModel
+@{
+    ViewData["Title"] = "JsonExport";
+    Layout = "~/Pages/Shared/_LayoutBook.cshtml";
+}
+<style type="text/css">
+    label{
+        color: #000000;
+    }
+</style>
+<br></br>
+<h3 style="color:#FFFFFF;">Your Json file is ready to be copied out!</h3>
+<br></br>
+<div class="jsoncolumn" id="wrapper" style="background-color:#FFFFFF; border: 3px outset #ffda8c; margin-top: 20px; overflow:hidden;">
+    <label>[</label>
+    @foreach (var product in Model.TblLibrary)
+    {
+
+
+        <label>{</label>
+        <label>"Id": "@product.",</label>
+        <label>"Title": "@product.Title",</label>
+        <label>"Author": "@product.Author",</label>
+        <label>"Translator": "@product.Translator",</label>
+        <label>"Publisher": "@product.Publisher",</label>
+        <label>"Catagories": "@product.Catagories",</label>
+        <label>"Status": "@product.Status",</label>
+        <label>"img": "@product.BookCoverName",</label>
+        <label>"Description": "@product.Descripton",</label>
+        <label>"Rate": "@product.Rate"</label>
+        <label>},</label>
+
+    }
+    <label>]</label>
+</div>
+
+
+

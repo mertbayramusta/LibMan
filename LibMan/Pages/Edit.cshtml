@@ -1,0 +1,64 @@
+﻿@page
+@model LibMan.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblUser.Id" />
+            <div class="form-group">
+                <label asp-for="TblUser.Name" class="control-label"></label>
+                <input asp-for="TblUser.Name" class="form-control" />
+                <span asp-validation-for="TblUser.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.Surname" class="control-label"></label>
+                <input asp-for="TblUser.Surname" class="form-control" />
+                <span asp-validation-for="TblUser.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.BirthDate" class="control-label"></label>
+                <input asp-for="TblUser.BirthDate" class="form-control" />
+                <span asp-validation-for="TblUser.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.Username" class="control-label"></label>
+                <input asp-for="TblUser.Username" class="form-control" />
+                <span asp-validation-for="TblUser.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.Email" class="control-label"></label>
+                <input asp-for="TblUser.Email" class="form-control" />
+                <span asp-validation-for="TblUser.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.Password" class="control-label"></label>
+                <input asp-for="TblUser.Password" class="form-control" />
+                <span asp-validation-for="TblUser.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.PhotoName" class="control-label"></label>
+                <input asp-for="TblUser.PhotoName" class="form-control" />
+                <span asp-validation-for="TblUser.PhotoName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="./UserList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

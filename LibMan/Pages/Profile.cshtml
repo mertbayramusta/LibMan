@@ -1,0 +1,67 @@
+﻿@page
+@model LibMan.WelcomeModel
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Your Profile!</title>
+</head>
+<body>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblUser.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblUser.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblUser.Surname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblUser.Surname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblUser.BirthDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblUser.BirthDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblUser.Username)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblUser.Username)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblUser.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblUser.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblUser.Password)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblUser.Password)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblUser.PhotoName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblUser.PhotoName)
+        </dd>
+    </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.TblUser.Id">Edit</a> |
+        <a asp-page="./UserList">Back to List</a>
+    </div>
+
+</body>
+</html>

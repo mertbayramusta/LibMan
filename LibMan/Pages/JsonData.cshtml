@@ -1,0 +1,82 @@
+﻿@page
+@model LibMan.JsonDataModel
+@{
+    ViewData["Title"] = "JsonData";
+    Layout = "~/Pages/Shared/_LayoutBook.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/dropzone.css" />
+}
+
+<style type="text/css">
+    .thumb-image {
+        float: left;
+        max-width: 100%;
+        height: 230px;
+        position: relative;
+        padding: 5px;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<h3 style="color:#FFFFFF;">Upload/Export Your Json</h3>
+<br></br><br></br>
+<div class="form-group">
+    <div class="col-md-12" style="background-color:#ffe6b3; border: 3px outset #ffda8c;">
+        <form method="post" enctype="multipart/form-data" id="imageUploadForm" class="dropzone">
+            <div class="fallback">
+                &nbsp;
+                <div class="form-group">
+                    <input id="fileUpload" multiple="multiple" name="image" type="file" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                &nbsp;
+                <input type="submit" value="Upload Your Json Data" class="buttons" />
+                <input type="submit" value="Cancel" class="cancelbtn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="col-md-12" style="background-color:#ffe6b3; border: 3px outset #ffda8c;">
+    <form method="post">
+        <div class="form-group">
+            &nbsp;
+            <center><button class="buttons" onclick="Result()" asp-page-handler="Register">Export Your Json Data</button></center>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script>
+
+        $("#fileUpload").on('change', function () {
+
+            if (typeof (FileReader) != "undefined") {
+
+                var image_holder = $("#image-holder");
+                image_holder.empty();
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("<img />", {
+                        "src": e.target.result,
+                        "class": "thumb-image"
+                    }).appendTo(image_holder);
+
+                }
+                image_holder.show();
+                reader.readAsDataURL($(this)[0].files[0]);
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+        });
+
+
+    </script>
+}
